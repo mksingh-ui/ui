@@ -1,9 +1,9 @@
 import "@/styles/globals.css"
 import { Metadata, Viewport } from "next"
+import * as stylex from "@stylexjs/stylex"
 
 import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
+import { fonts } from "@/lib/fonts.stylex"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
 import { SiteFooter } from "@/components/site-footer"
@@ -66,12 +66,26 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-}
+const styles = stylex.create({
+  antialiased: {
+    WebkitFontSmoothing: "antialiased",
+    MozOsxFontSmoothing: "grayscale",
+  },
+  body: {
+    minHeight: "100vh",
+    backgroundColor: "black",
+  },
+  mainWrapper: {
+    position: "relative",
+    display: "flex",
+    minHeight: "100vh",
+    flexDirection: "column",
+    backgroundColor: "black",
+  },
+  main: {
+    flex: "1 1 100%",
+  },
+})
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -82,24 +96,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.className
-          )}
-        >
+        <body {...stylex.props(styles.body, styles.antialiased)}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div vaul-drawer-wrapper="">
-              <div className="relative flex min-h-screen flex-col bg-background">
-                <SiteHeader />
-                <main className="flex-1">{children}</main>
-                <SiteFooter />
-              </div>
+            <div {...stylex.props(styles.mainWrapper, styles.antialiased)}>
+              <SiteHeader />
+              <main {...stylex.props(styles.main)}>{children}</main>
+              <SiteFooter />
             </div>
             <TailwindIndicator />
             <ThemeSwitcher />

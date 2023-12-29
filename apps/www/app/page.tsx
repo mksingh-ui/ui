@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import * as stylex from "@stylexjs/stylex"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -15,9 +16,25 @@ import {
 import { buttonVariants } from "@/registry/new-york/ui/button"
 import MailPage from "@/app/examples/mail/page"
 
+const DESKTOP = "@media (min-width: 1400px)"
+
+const styles = stylex.create({
+  container: {
+    position: "relative",
+    width: "100%",
+    marginRight: "auto",
+    marginLeft: "auto",
+    paddingRight: "2rem",
+    paddingLeft: "2rem",
+    maxWidth: {
+      [DESKTOP]: "1400px",
+    },
+  },
+})
+
 export default function IndexPage() {
   return (
-    <div className="container relative">
+    <div {...stylex.props(styles.container)}>
       <PageHeader>
         <Announcement />
         <PageHeaderHeading>Build your component library</PageHeaderHeading>

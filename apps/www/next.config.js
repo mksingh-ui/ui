@@ -1,7 +1,10 @@
-import { createContentlayerPlugin } from "next-contentlayer"
-
 /** @type {import('next').NextConfig} */
+
+const { createContentlayerPlugin } = require("next-contentlayer")
+const stylexPlugin = require("@stylexjs/nextjs-plugin")
+
 const nextConfig = {
+  transpilePackages: ["@stylexjs/open-props"],
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -52,4 +55,6 @@ const withContentlayer = createContentlayerPlugin({
   // Additional Contentlayer config options
 })
 
-export default withContentlayer(nextConfig)
+module.exports = stylexPlugin({
+  rootDir: __dirname,
+})(withContentlayer(nextConfig))
