@@ -19,6 +19,9 @@ export function MainNav() {
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
+        <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+          Alpha
+        </span>
       </Link>
       <nav className="flex items-center gap-6 text-sm">
         <Link
