@@ -47,6 +47,8 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.6",
+    "@stylexjs/open-props": "^0.4.1",
+    "@stylexjs/stylex": "^0.4.1",
     "@tanstack/react-table": "^8.9.1",
     "@vercel/analytics": "^1.0.1",
     "@vercel/og": "^0.0.21",
@@ -79,6 +81,9 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@stylexjs/babel-plugin": "^0.4.1",
+    "@stylexjs/eslint-plugin": "^0.4.1",
+    "@stylexjs/nextjs-plugin": "^0.4.1",
     "@types/lodash.template": "^4.5.1",
     "@types/node": "^17.0.45",
     "@types/react": "^18.2.7",
