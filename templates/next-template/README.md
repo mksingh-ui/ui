@@ -19,4 +19,4 @@ npx create-next-app -e https://github.com/mksingh/next-template
 
 ## License
 
-Licensed under the [MIT license](https://github.com/mksingh-ui/ui/blob/main/LICENSE.md).
+Licensed under the [MIT license](https://github.com/mksingh-ui/ui/blob/trunk/LICENSE.md).

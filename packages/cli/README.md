@@ -40,4 +40,4 @@ Visit https://ui.mksingh.in/docs/cli to view the documentation.
 
 ## License
 
-Licensed under the [MIT license](https://github.com/mksingh-ui/ui/blob/main/LICENSE.md).
+Licensed under the [MIT license](https://github.com/mksingh-ui/ui/blob/trunk/LICENSE.md).

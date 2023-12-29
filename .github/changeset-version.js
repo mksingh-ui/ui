@@ -1,5 +1,5 @@
 // ORIGINALLY FROM CLOUDFLARE WRANGLER:
-// https://github.com/cloudflare/wrangler2/blob/main/.github/changeset-version.js
+// https://github.com/cloudflare/wrangler2/blob/trunk/.github/changeset-version.js
 
 import { exec } from "child_process"
 
